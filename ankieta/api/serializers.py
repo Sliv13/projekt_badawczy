@@ -5,3 +5,8 @@ class Asnwerserializer(ModelSerializer):
     class Meta:
         model=Answers_Survey
         fields='__all__' 
+        
+class Countserializer(ModelSerializer):
+    class Meta:
+        model=Answers_Survey
+        fields=Answers_Survey.objects.count() 
