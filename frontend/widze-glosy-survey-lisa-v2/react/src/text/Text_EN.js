@@ -1,0 +1,96 @@
+export const text_english = [
+  { 
+    id: 0, 
+    export_name: 'buttons',
+    h2: '...', 
+    h3: '...', 
+    p1: 'Agree and send application', 
+    p2: 'Fill application again',
+    p3: '...',
+    p4: '...',
+    p5: '...'
+  },
+  { 
+    id: 1, 
+    export_name: 'Header',
+    h2: 'Analysis of the connections between emotions and sounds with colors', 
+    h3: '...', 
+    p1: '...', 
+    p2: '...',
+    p3: '...',
+    p4: '...',
+    p5: '...'
+  },
+  { 
+    id: 2, 
+    export_name: 'StudentsIntro',
+    h2: '...', 
+    h3: 'Hello,', 
+    p1: 'we are second degree students at the Gdańsk University of Technology and we are carrying out a research project.',
+    p2: 'We collect information on the relationship between sound, the emotion contained in the voice and color.', 
+    p3: 'A given survey will not take more than 3 minutes and the questions are anonymous, easy and pleasant :) ',
+    p4: 'We warmly invite you to fill it in ❤️',
+    p5: '...'
+  },
+  { 
+      id: 3, 
+      export_name: 'BasicInformation1',
+      h21: 'Section 1', 
+      h22: 'Respondent information', 
+      h3: 'Please select your gender', 
+      p1: 'Man', 
+      p2: 'Woman',
+      p3: 'Other answer',
+      p4: '...',
+      p5: 'Please answer the quesitons'
+  },
+  { 
+      id: 4, 
+      export_name: 'BasicInformation2',
+      h2: '...', 
+      h3: 'Please select your age group', 
+      p1: '18 <', 
+      p2: '18 - 25',
+      p3: '26 - 35',
+      p4: '36 - 45',
+      p6: '46 - 55',
+      p7: '56 - 65',
+      p8: '66 >',
+      p5: 'Please answer the quesitons'
+  },
+  { 
+      id: 5, 
+      export_name: 'Agreement',
+      h21: 'Section 4', 
+      h22: 'Consent to the processing of personal data (RODO)', 
+      h3: '...',
+      p1: 'I consent to the processing of my personal data provided in the above form for [PURPOSE OF DATA COLLECTION] by [COMPANY DATA] and by third parties', 
+      p2: '...',
+      p3: '...',
+      p4: '...',
+      p5: '...'
+  },
+  { 
+    id: 6, 
+    export_name: 'BasicInformation3',
+    h21: 'Section 4', 
+    h22: 'Information about diseases', 
+    h3: 'Please tick if you are colorblind', 
+    p1: 'Yes', 
+    p2: 'No',
+    p3: 'I don\'t know',
+    p4: '...',
+    p5: 'Please answer the quesitons'
+},
+{ 
+  id: 7, 
+  export_name: 'StudentsIntro',
+  h2: '...', 
+  h3: 'Thank you for answering the questions!', 
+  p1: '',
+  p2: 'The obtained results will help us in our research work.', 
+  p3: 'If you are interested you can fill the survey again ❤️',
+  p4: '',
+  p5: '...'
+},
+];
