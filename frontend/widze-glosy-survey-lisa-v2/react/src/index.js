@@ -331,6 +331,9 @@ var colorsMatrix = [
     $('.header-name').css({
       color: "black"
     });
+    $('.header-name').css({
+      color: "black"
+    });
     // dodane, żeby po przejściu na kolejną stronę pokazywała się ona od góry
     window.scrollTo(0, 0);
     
