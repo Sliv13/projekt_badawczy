@@ -1,7 +1,8 @@
-import React, { useState} from 'react';
+import React, { useState,useEffect} from 'react';
 import ColorPicker from './ColorPicker';
+import { wait } from '@testing-library/user-event/dist/utils';
 
-function SpeechSection({questions, peopleCounter}) {
+function SpeechSection({questions, peopleCounterz}) {
   console.log('z speech',peopleCounter)
   const [selectedOption, setSelectedOption] = useState(''); // Ustaw pustą wartość
   
@@ -12,7 +13,25 @@ function SpeechSection({questions, peopleCounter}) {
       setSelectedOption(selectedValue);
     }
   };
-
+  var [peopleCounter, setCounter] = useState(1);
+  useEffect(() => {
+    
+    console.log("abc",peopleCounter)
+  },[peopleCounter])
+    let get_people_numberr = async ()=>
+      {
+        //console.log("number=",peopleCounterr)
+        
+        let response = await fetch(`/api/peopleCounterss/`)
+        console.log("done",response)
+        let peopleCounterr= await response.text();
+        let peopleCounters= parseInt(peopleCounterr);
+        console.log("3number=",peopleCounters)
+        setCounter(peopleCounters);
+        
+      }
+  get_people_numberr()
+  
   return (
     <section id = "questions"> {/*domyślnie jest section class="page-content"*/}
         <div className="container">
@@ -39,8 +58,10 @@ function SpeechSection({questions, peopleCounter}) {
               <br/>           
             <div className="audio-container">
               <audio id = "idAudio" controls>
-                <source src={require('../audio_emoji/output/' + peopleCounter + '/speech/' + questions.audio)} type="audio/wav" />
+               
+                <source src={new require('../audio_emoji/output/' + peopleCounter + '/speech/' + questions.audio)} type="audio/wav" />
                 Your browser does not support the audio element.
+                
               </audio>
             </div>
             <br/>

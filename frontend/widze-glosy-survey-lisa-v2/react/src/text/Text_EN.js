@@ -49,13 +49,13 @@ export const text_english = [
       export_name: 'BasicInformation2',
       h2: '...', 
       h3: 'Please select your age group', 
-      p1: '18 <', 
+      p1: '< 18', 
       p2: '18 - 25',
       p3: '26 - 35',
       p4: '36 - 45',
       p6: '46 - 55',
       p7: '56 - 65',
-      p8: '66 >',
+      p8: '< 66',
       p5: 'Please answer the quesitons'
   },
   { 

@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6, p, .choose_emotion{
   padding-top:0;
   margin-top:0;
   color: rgb(0, 0, 0);
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Optima',sans-serif;
 }
 
 .choose_emotion{
@@ -150,7 +150,7 @@ section {
   text-align:justify;
   margin-top:0;
   color: rgb(255, 50, 60);
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Optima',sans-serif;
 }
 
 .colors_image{
@@ -202,7 +202,7 @@ input[type=text] {
   border-radius: 10px;
   border: 1px solid lightgrey;
   font-size: 1em;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Optima',sans-serif;
   background:white;
 }
 
@@ -262,7 +262,7 @@ input[type=text] {
   color: hsl(0, 0%, 33%);
   margin-left: 14px;
   font-size: 16px;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Optima',sans-serif;
   transition: .3s;
 }
 
@@ -276,7 +276,7 @@ input[type=text] {
 body {
   /*background: #ffffff; /*DOMYŚLNE TŁO APKI*/
   background-image: "./images/kisspng-color-circle-graphic-design-vector-color-circle-decorative-pattern-5aae8dd4b3af89.101224301521389012736.png";
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Optima',sans-serif;
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -256,6 +256,7 @@ var colorsMatrix = [
 
   //RESETUJEMY KOLORKI na jednej stronie
   $(".reset_color").click(function () {
+    
     document.querySelectorAll('audio').forEach(el => el.pause());
     document.querySelectorAll('audio').forEach(el => el.currentTime = 0);
     counter = 0;
@@ -323,10 +324,13 @@ var colorsMatrix = [
     $("#svg_form_time rect").css("fill", active_color);
     $("#svg_form_time circle").css("fill", active_color);
     //STOP ALL AUDIO FILES
+    document.querySelectorAll('audio').forEach(el => el.load());
     document.querySelectorAll('audio').forEach(el => el.pause());
     document.querySelectorAll('audio').forEach(el => el.currentTime = 0);
     document.body.style.backgroundColor = "white";
-
+    $('.header-name').css({
+      color: "black"
+    });
     // dodane, żeby po przejściu na kolejną stronę pokazywała się ona od góry
     window.scrollTo(0, 0);
     
@@ -346,7 +350,7 @@ var colorsMatrix = [
     
     let createanswer = async () => {
       
-      fetch(`http://127.0.0.1:8000/api/answers/submit/`, {
+      fetch(`/api/answers/submit/`, {
       method: "POST",
       headers: {
           'Content-Type': 'application/json'
@@ -358,26 +362,26 @@ var colorsMatrix = [
       daltonizm:outputVector[2],
       Speech_1_colors:colorsMatrix[0],
       Speech_1_colors_emotion:emotionsMatrix[0],
-      Speech_2_colors:colorsMatrix[0],
-      Speech_2_colors_emotion:emotionsMatrix[0],
-      Speech_3_colors:colorsMatrix[0],
-      Speech_3_colors_emotion:emotionsMatrix[0],
-      Speech_4_colors:colorsMatrix[0],
-      Speech_4_colors_emotion:emotionsMatrix[0],
-      Speech_5_colors:colorsMatrix[0],
-      Speech_5_colors_emotion:emotionsMatrix[0],
-      Speech_6_colors:colorsMatrix[0],
-      Speech_6_colors_emotion:emotionsMatrix[0],
-      Song_1_colors:colorsMatrix[0],
-      Song_1_colors_emotion:emotionsMatrix[0],
-      Song_2_colors:colorsMatrix[0],
-      Song_2_colors_emotion:emotionsMatrix[0],
-      Song_3_colors:colorsMatrix[0],
-      Song_3_colors_emotion:emotionsMatrix[0],
-      Song_4_colors:colorsMatrix[0],
-      Song_4_colors_emotion:emotionsMatrix[0],
-      Song_5_colors:colorsMatrix[0],
-      Song_5_colors_emotion:emotionsMatrix[0]
+      Speech_2_colors:colorsMatrix[1],
+      Speech_2_colors_emotion:emotionsMatrix[1],
+      Speech_3_colors:colorsMatrix[2],
+      Speech_3_colors_emotion:emotionsMatrix[2],
+      Speech_4_colors:colorsMatrix[3],
+      Speech_4_colors_emotion:emotionsMatrix[3],
+      Speech_5_colors:colorsMatrix[4],
+      Speech_5_colors_emotion:emotionsMatrix[4],
+      Speech_6_colors:colorsMatrix[5],
+      Speech_6_colors_emotion:emotionsMatrix[5],
+      Song_1_colors:colorsMatrix[6],
+      Song_1_colors_emotion:emotionsMatrix[6],
+      Song_2_colors:colorsMatrix[7],
+      Song_2_colors_emotion:emotionsMatrix[7],
+      Song_3_colors:colorsMatrix[8],
+      Song_3_colors_emotion:emotionsMatrix[8],
+      Song_4_colors:colorsMatrix[9],
+      Song_4_colors_emotion:emotionsMatrix[9],
+      Song_5_colors:colorsMatrix[10],
+      Song_5_colors_emotion:emotionsMatrix[10]
       }),
 })
 }

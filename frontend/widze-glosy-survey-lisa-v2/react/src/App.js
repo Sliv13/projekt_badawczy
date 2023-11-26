@@ -39,8 +39,11 @@ function App({ peopleCountero}) {
       setENGLISH(updatedQuestions, updatedText);
     };
     
-
-    var peopleCounter=1;
+   let peopleCounter=1;
+    
+    
+    //const pc=peopleCounter;
+  if(peopleCounter>-1){
     
   return (
     <div>
@@ -49,16 +52,11 @@ function App({ peopleCountero}) {
       <button id="poland" onClick={PolandClick}></button>
       <button id="united-kingdom" onClick={EnglandClick}></button>
       <br />
-``
+
       <StudentsIntro intro = {updatedText[2]}/>
       <BasicInformation1 basic1 = {updatedText[3]} basic2 = {updatedText[4]} basic3 = {updatedText[6]}/>
       
-      {/*TO JEST BARDZO NIEŁADNA METODA, NA KONIEC TRZEBA TO ZOPTYMALIZOWAĆ*/}
-      {/*GŁOS - KOLORY */}
-      {peopleCounter=Peoplecount()}
-      {console.log("Count",peopleCounter)}
-      {/*TO JEST BARDZO NIEŁADNA METODA, NA KONIEC TRZEBA TO ZOPTYMALIZOWAĆ*/}
-      {/*GŁOS - KOLORY */}
+     
       <SpeechSection questions = {updatedQuestions[0]} peopleCounter={peopleCounter}/>
       <SpeechSection questions = {updatedQuestions[1]} peopleCounter={peopleCounter}/>
       <SpeechSection questions = {updatedQuestions[2]} peopleCounter={peopleCounter}/>
@@ -72,6 +70,8 @@ function App({ peopleCountero}) {
       <MusicSection questions = {updatedQuestions[9]} peopleCounter={peopleCounter}/>
       <MusicSection questions = {updatedQuestions[10]} peopleCounter={peopleCounter}/>
       
+      
+      
       <Agreement agree = {updatedText[5]}/>
       {/*<StudentsEnd /> SUBMIT PRZEKIERUJE NA INNĄ STRONĘ StudentsEnd*/} 
         <div className="button" id="prev">← </div> 
@@ -80,7 +80,47 @@ function App({ peopleCountero}) {
       <StudentsIntro intro = {updatedText[7]}/>
       <div className="button" id="again">{updatedText[0].p2}</div>
     </div>
-  );
+  );}
+  else
+  {
+    console.log("hello2")
+    return (
+      <div>
+        {/*<img src={colorsImage} className='colors_image'></img>*/}
+        <Header header = {updatedText[1]}/>
+        <button id="poland" onClick={PolandClick}></button>
+        <button id="united-kingdom" onClick={EnglandClick}></button>
+        <br />
+  
+        <StudentsIntro intro = {updatedText[2]}/>
+        <BasicInformation1 basic1 = {updatedText[3]} basic2 = {updatedText[4]} basic3 = {updatedText[6]}/>
+        
+       
+        <SpeechSection questions = {updatedQuestions[0]} peopleCounter={2}/>
+        <SpeechSection questions = {updatedQuestions[1]} peopleCounter={2}/>
+        <SpeechSection questions = {updatedQuestions[2]} peopleCounter={2}/>
+        <SpeechSection questions = {updatedQuestions[3]} peopleCounter={2}/>
+        <SpeechSection questions = {updatedQuestions[4]} peopleCounter={2}/>
+        <SpeechSection questions = {updatedQuestions[5]} peopleCounter={2}/>
+        {/*ŚPIEW - KOLORY */}
+         <MusicSection questions = {updatedQuestions[6]} peopleCounter={2}/>
+        <MusicSection questions = {updatedQuestions[7]} peopleCounter={2}/>
+        <MusicSection questions = {updatedQuestions[8]} peopleCounter={2}/>
+        <MusicSection questions = {updatedQuestions[9]} peopleCounter={2}/>
+        <MusicSection questions = {updatedQuestions[10]} peopleCounter={2}/>
+        
+        
+        
+        <Agreement agree = {updatedText[5]}/>
+        {/*<StudentsEnd /> SUBMIT PRZEKIERUJE NA INNĄ STRONĘ StudentsEnd*/} 
+          <div className="button" id="prev">← </div> 
+          <div className="button" id="next"> →</div>
+          <div className="button" id="submit">{updatedText[0].p1}</div>
+        <StudentsIntro intro = {updatedText[7]}/>
+        <div className="button" id="again">{updatedText[0].p2}</div>
+      </div>
+    );
+  }
 }
 
 

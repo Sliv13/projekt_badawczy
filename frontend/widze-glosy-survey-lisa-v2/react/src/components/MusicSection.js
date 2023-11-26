@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState,useEffect} from 'react';
 import ColorPicker from './ColorPicker';
 
 function MusicSection({questions,peopleCounter}) {
@@ -15,61 +15,79 @@ function MusicSection({questions,peopleCounter}) {
       setSelectedOption(selectedValue);
     }
   };
-
+  var [peopleCounter, setCounter] = useState(1);
+  useEffect(() => {
+    
+    console.log("abc",peopleCounter)
+  },[peopleCounter])
+    let get_people_numberr = async ()=>
+      {
+        //console.log("number=",peopleCounterr)
+        
+        let response = await fetch(`/api/peopleCounterss/`)
+        console.log("done",response)
+        let peopleCounterr= await response.text();
+        let peopleCounters= parseInt(peopleCounterr);
+        console.log("3number=",peopleCounters)
+        setCounter(peopleCounters);
+        
+      }
+  get_people_numberr()
   return (
     <section id = "questions"> {/*domyślnie jest section class="page-content"*/}
-        <div className="container">
-         <div className="row">
-            <div key={questions.id}>
-            <h2>{questions.section}</h2>
-            <h2>{questions.section_name}</h2>
-            <br />  
-            <h3>{questions.quest}</h3> 
-            {/*questions.audio   '../audio_emoji/Goblin.mp3'  */  }
-            <hr /><br/>
-            <div className="audio-container">
-              <audio id = "idAudio" controls>
-                <source src={require('../audio_emoji/output/' + peopleCounter + '/music/' + questions.audio)} type="audio/wav" />
-                Your browser does not support the audio element.
-                {console.log(peopleCounter)}
-              </audio>
-            </div>
-            <br/>
-            <div className="color-picker-container">
-              <div className="choose_color_button1" id="c_color1"></div> 
-              <div className="choose_color_button2" id="c_color2"></div>
-              <div className="choose_color_button3" id="c_color3"></div>
-            </div> 
-            <div id="counter"></div> 
-            <div className = "colors_appears">
-              <ColorPicker />
-            </div>
-            <br/><hr /><br/>
-            <div>
-              <h3>Wybierz pasującą do nagrania emocję:</h3>
-              <select className="choose_emotion" name="emotion" onChange={handleSelectChange}>
-                <option disabled>
-                  wybierz emocję
-                </option>
-                <option value="neutralny">neutralny</option>
-                <option value="szczęście">szczęście</option>
-                <option value="smutek">smutek</option>
-                <option value="złość">złość</option>
-                <option value="strach">strach</option>
-                <option value="niesmak">niesmak</option>
-              </select>
-              {/* <p>Wybrana emocja: {selectedOption}</p> */}
-            </div>
-            
-            <div className="reset_color" id="c_reset">Reset</div> 
-            <div className="warning_info">
-               Należy wybrać co najmniej jeden kolor oraz zaznaczyć emocję aby przejść dalej.
-            </div>
-            </div>
+    <div className="container">
+     <div className="row">
+        <div key={questions.id}>
+        <h2>{questions.section}</h2>
+        <h2>{questions.section_name}</h2>
+        <br />  
+        <h3>{questions.quest}</h3> 
+        {/*questions.audio   '../audio_emoji/Goblin.mp3'  */  }
+        <br/>
+        <div style={{ display: 'flex', alignItems: 'center' }}>{/*  style={{ display: 'flex', alignItems: 'center' }} */}
+          <h3>{questions.emotion}</h3>
+          <select className="choose_emotion" name="emotion" value={selectedOption} onChange={handleSelectChange}>
+            <option value="" disabled>{questions.emotion0}</option>
+            <option value="neutral">{questions.emotion1}</option>
+            <option value="happy">{questions.emotion2}</option>
+            <option value="sad">{questions.emotion3}</option>
+            <option value="angry">{questions.emotion4}</option>
+            <option value="fear">{questions.emotion5}</option>
+            <option value="disgust">{questions.emotion6}</option>
+          </select>
         </div>
-      </div>      
-    </section>
-  );
+          <br/>     
+        <div className="audio-container">
+          <audio id = "idAudio" controls>
+            <source src={require('../audio_emoji/output/' + peopleCounter + '/music/' + questions.audio)} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <br/>
+        <div className="color-picker-container">
+          <div className="choose_color_button1" id="c_color1"></div> 
+          <div className="choose_color_button2" id="c_color2"></div>
+          <div className="choose_color_button3" id="c_color3"></div>
+        </div> 
+        <div id="counter"></div> 
+        <div className = "colors_appears">
+          <ColorPicker />
+        </div>
+        <br/>
+
+          <div className="reset_color"> 
+          <div id="c_reset">Reset</div> 
+        </div>
+        <br/>
+        <div className="warning_info">
+          {questions.warning}
+        </div>
+        </div>
+        <br/>
+    </div>
+  </div>      
+</section>
+);
 }
 
 export default MusicSection;
