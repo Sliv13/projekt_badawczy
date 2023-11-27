@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Answers_Survey(models.Model):
     
-    nr_zestawu=models.CharField(max_length=2,blank=True,null=True)
+    nr_zestawu=models.CharField(max_length=3,blank=True,null=True)
     plec=models.CharField(max_length=10,blank=True,null=True)
     wiek=models.CharField(max_length=2,blank=True,null=True)
     daltonizm=models.CharField(max_length=10,blank=True,null=True)
