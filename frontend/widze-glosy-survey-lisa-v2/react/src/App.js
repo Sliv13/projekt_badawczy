@@ -56,7 +56,7 @@ function App({ peopleCountero}) {
       <StudentsIntro intro = {updatedText[2]}/>
       <BasicInformation1 basic1 = {updatedText[3]} basic2 = {updatedText[4]} basic3 = {updatedText[6]}/>
       
-     
+      {peopleCounter=Peoplecount()}
       <SpeechSection questions = {updatedQuestions[0]} peopleCounter={peopleCounter}/>
       <SpeechSection questions = {updatedQuestions[1]} peopleCounter={peopleCounter}/>
       <SpeechSection questions = {updatedQuestions[2]} peopleCounter={peopleCounter}/>
