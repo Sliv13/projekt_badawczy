@@ -1,7 +1,7 @@
 import React, { useState, useRef , useEffect} from 'react';
 import SpeechSection from './components/SpeechSection';
 import MusicSection from './components/MusicSection';
-var Peoplecount= ({updatedQuestions,updatedQuestions1}) =>{
+var Peoplecount= () =>{
  
 
 let [peopleCounter, setCounter] = useState(1);
@@ -13,7 +13,7 @@ useEffect(() => {
     {
       //console.log("number=",peopleCounterr)
       
-      let response = await fetch(`/api/peopleCounterss/`)
+      let response = await fetch(`/api/pc/`)
       console.log("done",response)
       let peopleCounterr= await response.text();
       let peopleCounters= parseInt(peopleCounterr);
